@@ -83,6 +83,20 @@ else
 }
 buttonstate();
 });
+$("#user").keyup(function()
+{
+	if(username())
+	{
+$("#user").css("border","4px solid green");
+$("#messageuser").html("<p class='text-success'>VALIDATED</p>")
+}
+else
+{
+	$("#user").css("border","4px solid red");
+	$("#messageuser").html("<p class='text-danger'>INVALID</p>")
+}
+buttonstate();
+});
 buttonstate();
 });
 
@@ -91,7 +105,7 @@ buttonstate();
 function buttonstate()
 { $("#submit").hide();
 
-	if (validatename() && validateadd() && validateemail()&& feedtext() && (validatepass() | validatepass2() | validatepass3())) {
+	if (validatename() && validateadd() && validateemail()&& feedtext() && username() && (validatepass() | validatepass2() | validatepass3())) {
 		$("#submit").show();
 	}
 	else
@@ -112,6 +126,7 @@ function validatename()
 }
 function validateadd()
 {
+
 	var address=$("#address").val();
 	var reg2=/^([a-zA-z0-9-#/(){}]{3,20})\s*(([a-zA-z0-9-#/(){}/]{1,20})\s*)*$/;
 	if(reg2.test(address)){
@@ -122,11 +137,18 @@ function validateadd()
 }
 function validateemail()
 {
+	var users=$("#user").val();
 	var email=$("#email").val();
 	var reg3=/^([a-zA-z0-9.]{4,20})@(c|C)hristuniversity.in$/;
+	//var reg3=/^users@(c|C)hristuniversity.in$/;
+	var match=/^.*(?=@christuniversity.in)$/;
 	if(reg3.test(email))
 	{
 		return true;
+	}
+	else if(!match.test(users))
+	{
+     return false;
 	}
 	else
 	{
@@ -193,6 +215,22 @@ function validatepass3()
 		return false;
 	}
 }
+
+function username()
+{
+	//special charcter between characters 
+	//(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-zA-z][!@#$%^&*?][a-zA-z])(?=.*[~`!@#$%^&*()-_+={}[|\;:"<\]\>,./?])[a-zA-z0-9~`!@#$%^&*()-_+={}[|\;:"<\]\>,./?]{8,20}
+	var users=$("#user").val();
+	var val=/^[a-zA-Z]{4,}$/;
+	if(val.test(users))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
 $(function() {
     $("#submit").click(function() {     
       if($('input[type=radio][name=interest]:checked').length == 0)
@@ -213,3 +251,19 @@ $(function() {
       }      
     });
 });
+
+$(document).ready(function(){
+  $("#user").keypress(function(e){
+     var keyCode = e.which;
+    /*
+
+      48-57 - (0-9)Numbers
+    */
+ 
+    if ( !(keyCode <= 48 || keyCode >= 57)) { 
+      return false;
+    }
+  });
+});
+
+
