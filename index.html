@@ -5,11 +5,53 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/bootstrap.min.css">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/mdb.min.css">
+<link rel="stylesheet" href="node_modules/mdbootstrap/css/style.css">
+<script type="text/javascript" src="node_modules/mdbootstrap/js/jquery.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/popper.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="node_modules/mdbootstrap/js/mdb.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/hom.css">
+    <script type="text/javascript" src="/js/home.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.10.1/mdb.min.css"
+  rel="stylesheet"
+/>
+      </script>
+
+      <script src = "jquery.plug-in.js" type = "text/javascript"></script>
+      <script src = "custom.js" type = "text/javascript"></script>
+
 	<title>CAC1</title>
 </head>
 <body style="background: black;color: white;">
+	 <script type="text/javascript" src="validations.js"></script>
 <div>
 <div class="row mt-3">
 	<div class="col-4"></div> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
@@ -22,21 +64,30 @@
 		<h1 class="col-12" align="center"><b><strong>FEEDBACK FORM</strong></b></h1>
 		<div class=" col-2"></div>
 		<div class=" col-4" align="center">
-		<label class="form-label"><b> NAME</b></label>
+		<label class="form-label" style="color:white"><b> NAME</b></label>
 		<input type="text" name="name" class="form-control" id="name">
+		<span id="messagename"></span>
 	    </div>
 	    <div class="col-4" align="center">
-		<label class="form-label"><b> ADDRESS </b></label>
+		<label class="form-label" style="color:white"><b> ADDRESS </b></label>
 		<input type="text" name="address" class="form-control" id="address">
+		<span id="messageadd"></span>
 		</div>
 	    <div class="col-2"></div>
 	</div>
 	<div class="row mt-3">
-		<div class="col-3"></div>
-		<div class="col-6" align="center">
-		<label class="form-label"><b> EMAIL </b></label>
+		<div class="col-2"></div>
+		<div class="col-4" align="center">
+		<label class="form-label" style="color:white"><b> EMAIL </b></label>
 		<input type="text" name="email" class="form-control" id="email">
-		<div class="col-3"></div>
+        <span id="messageemail"></span>
+
+	</div>
+	<div class="col-4" style="text-align: center;">
+		<label class="form-label" style="color:white;"><b> PASSWORD </b></label>
+		<input type="text" name="password" class="form-control" id="password">
+        <span id="messpass"></span>
+	</div>
 	</div>
 	<div class="row mt-5" >
 		<div class="col-2"></div>
@@ -94,13 +145,13 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="radio" id="interest1" name="interest" value="friends">
+						<input type="radio" id="friends" name="friends" value="friends">
                         <label for="friends">friends</label> 
                         
 					</td>
 				
 					<td>
-						<input type="radio" id="interest2" name="interest" value="telivision">
+						<input type="radio" id="interest" name="telivision" value="telivision">
   <label for="telivision">telivision</label><br>
 					</td>
 				</tr>
@@ -113,11 +164,11 @@
 				</tr>
 				<tr>
 					<td>
-					    <input type="radio" id="interest3" name="interest" value="internet">
+					    <input type="radio" id="interest" name="internet" value="internet">
   <label for="internet">internet</label><br> 
 					</td>
 					<td>
-						<input type="radio" id="interest4" name="interest" value="others">
+						<input type="radio" id="interest" name="others" value="others">
   <label for="others">others</label>
 					</td>
 				</tr>
@@ -134,12 +185,13 @@
  	<div class="col-2"></div>
  	<div class="col-8" style="text-align: center">
  		<label ><h6 ><b>ADDITIONAL FEEDBACK </b></h6></label>
- 		<input type="textarea" name="additional" class="form-control">
+ 		<input type="textarea" id="text" name="additional" class="form-control">
  	</div>
  	<div class="col-2"></div>
  </div>
 	</div>
 </div>
+
 <div class="row mt-3">
 	<div class="col-5"></div>
 	<div class="col-2">
@@ -147,5 +199,6 @@
 	</div>
 	<div class="col-5"></div>
 </div>
+
 </body>
 </html>
