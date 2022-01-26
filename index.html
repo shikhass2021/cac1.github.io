@@ -52,7 +52,8 @@
 </head>
 <body style="background: black;color: white;">
 	 <script type="text/javascript" src="validations.js"></script>
-<div>
+	 <div class="thankyou" style="color:white;text-align: center;font-size: 300%;"></div>
+<div class="all">
 <div class="row mt-3">
 	<div class="col-4"></div> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
 	<div class="col-3" >
@@ -94,13 +95,13 @@
 		<div class="col-5">
 			<!-- student, location, campus, atmosphere, dorm rooms and sport -->
 			<fieldset>
-			<table border="1%" cellpadding="5px" >
+			<table id="checkit"  border="1%" cellpadding="5px" >
 				<tr>
 					<th><label><b>what did u like the most in campus?</b></label><br></th>
 				</tr>
 				<tr>
 					<td>
-			<input type="checkbox" value="atmosphere" >
+			<input type="checkbox"  value="atmosphere" >
 						<label>FRIENDLY ATMOSPHERE</label>
 			
 					</td>
@@ -145,13 +146,13 @@
 				</tr>
 				<tr>
 					<td>
-						<input type="radio" id="friends" name="friends" value="friends">
+						<input type="radio" id="friends" name="interest" value="friends">
                         <label for="friends">friends</label> 
                         
 					</td>
 				
 					<td>
-						<input type="radio" id="interest" name="telivision" value="telivision">
+						<input type="radio" id="interest" name="interest" value="telivision">
   <label for="telivision">telivision</label><br>
 					</td>
 				</tr>
@@ -164,11 +165,11 @@
 				</tr>
 				<tr>
 					<td>
-					    <input type="radio" id="interest" name="internet" value="internet">
+					    <input type="radio" id="interest" name="interest" value="internet">
   <label for="internet">internet</label><br> 
 					</td>
 					<td>
-						<input type="radio" id="interest" name="others" value="others">
+						<input type="radio" id="interest" name="interest" value="others">
   <label for="others">others</label>
 					</td>
 				</tr>
@@ -186,6 +187,7 @@
  	<div class="col-8" style="text-align: center">
  		<label ><h6 ><b>ADDITIONAL FEEDBACK </b></h6></label>
  		<input type="textarea" id="text" name="additional" class="form-control">
+ 		<span id="messtext"></span>
  	</div>
  	<div class="col-2"></div>
  </div>
