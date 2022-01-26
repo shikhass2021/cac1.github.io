@@ -1,5 +1,4 @@
 # cac1.github.io
-https://pavankumark2410.github.io/cac1.github.io/
 A Christ university has asked you to create an XHTML document that allows potential students to provide feedback about their campus visit.
 Your XHTML document should contain a form with text boxes for a name, address and e-mail. Provide check boxes that allow prospective students
 to indicate what they liked most about the campus. These check boxes should include: student, location, campus, atmosphere, dorm rooms and sports.
@@ -10,3 +9,5 @@ upper case letter [A-Z] and a minimum of 1 numeric character [0-9] and 1 special
 numeric, and special character must be EMBEDDED somewhere in the middle of the password, and not just be the first or the last character of the password string.
 Only official mail will be accepted in the field of email (E.g. username college/universityname.in). For username Lock the keyboard whenever user try to enter digits
 ( regular expression)
+Website demo :
+https://pavankumark2410.github.io/cac1.github.io/
