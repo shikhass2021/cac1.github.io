@@ -40,10 +40,50 @@ $("#messageemail").html("<p class='text-success'>VALIDATED</p>")
 else
 {
 	$("#email").css("border","4px solid red");
-	$("#messageemail").html("<p class='text-danger'>__________________________________________________________________</p>")
+	$("#messageemail").html("<p class='text-danger'>INVALID EMAIL</p>")
 }
 buttonstate();
 });
+
+$("#password").keyup(function()
+{
+	if(validatepass())
+	{
+$("#password").css("border","4px solid red");
+$("#messpass").html("<p class='text-success'>WEAK PASSWORD</p>")
+}
+else if(validatepass2())
+{
+	$("#password").css("border","4px solid lightgreen");
+$("#messpass").html("<p class='text-success'>MODERATE PASSWORD</p>")
+}
+else if(validatepass3())
+{
+	$("#password").css("border","4px solid green");
+$("#messpass").html("<p class='text-success'>STRONG PASSWORD</p>")
+}
+else
+{
+	$("#password").css("border","4px solid red");
+	$("#messpass").html("<p class='text-danger'>INCORRECT PASSWORD</p>")
+}
+buttonstate();
+});
+$("#text").keyup(function()
+{
+	if(feedtext())
+	{
+$("#text").css("border","4px solid green");
+$("#messtext").html("<p class='text-success'>VALIDATED</p>")
+}
+else
+{
+	$("#text").css("border","4px solid red");
+	$("#messtext").html("<p class='text-danger'>INVALID</p>")
+}
+buttonstate();
+});
+buttonstate();
 });
 
 
@@ -51,7 +91,7 @@ buttonstate();
 function buttonstate()
 { $("#submit").hide();
 
-	if (validatename() && validateadd() && validateemail()) {
+	if (validatename() && validateadd() && validateemail()&& feedtext() && (validatepass() | validatepass2() | validatepass3())) {
 		$("#submit").show();
 	}
 	else
@@ -94,3 +134,82 @@ function validateemail()
 	}
 
 }
+function feedtext()
+{
+	var feed=$("#text").val();
+	var write=/^[\w\s]{10,}$/;
+	if(write.test(feed))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+}
+
+function validatepass()
+{
+	var pass=$("#password").val();
+	//var weak=/^(([a-z]+[A-Z])+[a-zA-Z]|([A-Z]+[a-z]+[a-zA-Z])|([a-zA-Z][A-Z]+[a-z])|([a-zA-Z][A-Z]+[a-z]))$/;
+	//(?<!foo|bar)(foo|bar)(?!foo|bar)
+	var weak=/^(?=.*[a-z])[a-zA-z]{8,20}$/;
+	if(weak.test(pass))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+function validatepass2()
+{
+	var pass=$("#password").val();
+	var medium=/^((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]))[a-zA-z0-9]{8,20}$/;
+	if(medium.test(pass))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+function validatepass3()
+{
+	//special charcter between characters 
+	//(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[a-zA-z][!@#$%^&*?][a-zA-z])(?=.*[~`!@#$%^&*()-_+={}[|\;:"<\]\>,./?])[a-zA-z0-9~`!@#$%^&*()-_+={}[|\;:"<\]\>,./?]{8,20}
+	var pass=$("#password").val();
+	var strong=/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[~`!@#$%^&*()-_+={}[|\;:"<\]\>,./?])[a-zA-z0-9~`!@#$%^&*()_+={}[|\;:"<\]\>,./?]{8,20}$/;
+	if(strong.test(pass))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+$(function() {
+    $("#submit").click(function() {     
+      if($('input[type=radio][name=interest]:checked').length == 0)
+      {
+         alert("Please select atleast INTEREST ");
+         return false;
+      }
+      if($('input[type=checkbox][name=like]:checked').length == 0)
+      {
+         alert("Please select atleast ONE CHECKBOX ");
+         return false;
+      }
+      else
+      {
+         $('.all').remove();
+         $(".thankyou").append("THANKS FOR YOUR PATIENCE");
+         $(submit).hide();
+      }      
+    });
+});
